@@ -1,112 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Personal Portfolio</title>
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
-<body class="bg-gray-900 text-gray-100">
+<body class="bg-gray-900 text-gray-100 font-sans antialiased overflow-x-hidden">
 
   <!-- NAVBAR -->
   <nav class="fixed w-full bg-gray-900/90 backdrop-blur border-b border-gray-700 z-50">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center" data-aos="fade-down"
+      data-aos-duration="1000">
       <h1 class="text-xl font-bold">Verel.dev</h1>
-      <ul class="flex gap-6 text-sm">
-        <li><a href="#home" class="hover:text-blue-400">Home</a></li>
-        <li><a href="#about" class="hover:text-blue-400">About</a></li>
-        <li><a href="#projects" class="hover:text-blue-400">Projects</a></li>
-        <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn" class="md:hidden text-gray-300 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+
+      <!-- Desktop & Mobile Menu -->
+      <ul id="menu"
+        class="hidden md:flex flex-col md:flex-row absolute md:static top-16 left-0 w-full md:w-auto bg-gray-900 md:bg-transparent border-b md:border-none border-gray-700 p-6 md:p-0 gap-4 md:gap-6 text-sm transition-all duration-300 ease-in-out font-medium">
+        <li><a href="#home" class="nav-link block text-gray-400 hover:text-blue-400 transition">Home</a></li>
+        <li><a href="#about" class="nav-link block text-gray-400 hover:text-blue-400 transition">About</a></li>
+        <li><a href="#projects" class="nav-link block text-gray-400 hover:text-blue-400 transition">Projects</a></li>
+        <li><a href="#contact" class="nav-link block text-gray-400 hover:text-blue-400 transition">Contact</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- HOME -->
-  <section id="home" class="min-h-screen flex items-center justify-center">
+  <section id="home" class="min-h-screen flex items-center justify-center pt-20">
     <div class="text-center px-6">
-      <h2 class="text-4xl md:text-6xl font-bold mb-4">
+      <div class="relative w-40 h-40 mx-auto mb-6" data-aos="zoom-in" data-aos-duration="1000">
+        <img src="assets/profile_avatar_1765950016111.png" alt="Profile Avatar"
+          class="rounded-full shadow-2xl border-4 border-blue-500/20 object-cover w-full h-full">
+        <div class="absolute inset-0 rounded-full bg-blue-500/10 animate-pulse"></div>
+      </div>
+      <h2 class="text-4xl md:text-6xl font-bold mb-4" data-aos="fade-up" data-aos-delay="200">
         Hi, I'm <span class="text-blue-400">Verel</span>
       </h2>
-      <p class="text-gray-400 max-w-xl mx-auto mb-6">
+      <p class="text-gray-400 max-w-xl mx-auto mb-6" data-aos="fade-up" data-aos-delay="400">
         Front-End Developer in progress. I love building clean and simple web interfaces.
       </p>
-      <a href="#projects"
-         class="inline-block bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg transition">
+
+      <!-- Social Icons -->
+      <div class="flex justify-center gap-6 mb-8" data-aos="fade-up" data-aos-delay="600">
+        <a href="https://github.com/mhdverel" target="_blank"
+          class="text-gray-400 hover:text-white transition transform hover:scale-110">
+          <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd"
+              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+              clip-rule="evenodd" />
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/muhammad-verel" target="_blank"
+          class="text-gray-400 hover:text-blue-500 transition transform hover:scale-110">
+          <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd"
+              d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+              clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+
+      <a href="#projects" class="inline-block bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg transition"
+        data-aos="fade-up" data-aos-delay="800">
         View My Work
       </a>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section id="about" class="min-h-screen flex items-center bg-gray-800">
-    <div class="max-w-5xl mx-auto px-6">
-      <h3 class="text-3xl font-bold mb-6">About Me</h3>
-      <p class="text-gray-300 leading-relaxed max-w-3xl">
-        Saya adalah seorang Front-End Developer pemula yang sedang belajar membangun
-        website menggunakan HTML, CSS, JavaScript, dan Tailwind CSS.
-        Saya tertarik pada UI yang clean, responsive, dan user-friendly.
+  <!-- ABOUT -->
+  <section id="about" class="min-h-screen flex items-center bg-gray-800 py-20 relative overflow-hidden">
+    <!-- Background Elements -->
+    <div class="absolute top-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2">
+    </div>
+    <div
+      class="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl translate-y-1/2 translate-x-1/2">
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6 w-full relative z-10 text-center" data-aos="fade-up">
+      <h3 class="text-4xl md:text-5xl font-bold mb-8">
+        About <span class="text-blue-400">Me</span>
+      </h3>
+
+      <p class="text-gray-300 leading-relaxed mb-6 text-lg max-w-2xl mx-auto">
+        Hello! I'm <span class="font-semibold text-white">Verel</span>, a passionate Front-End Developer based in
+        Jakarta.
+        I specialize in building clean, responsive, and user-friendly websites. My journey in web development is driven
+        by a curiosity to understand how things work and a desire to create impactful digital experiences.
       </p>
+
+      <p class="text-gray-400 leading-relaxed mb-10 max-w-2xl mx-auto">
+        Currently, I'm focusing on mastering the modern web ecosystem using standard technologies. I believe in writing
+        modular, readable code and constantly improving my craft.
+      </p>
+
+      <!-- Tech Stack Badges -->
+      <div class="mb-12">
+        <h4 class="text-sm uppercase tracking-wider text-gray-500 mb-6 font-semibold">My Tech Stack</h4>
+        <div class="flex flex-wrap justify-center gap-4">
+          <span
+            class="px-4 py-2 bg-gray-900 border border-gray-700 rounded-full text-gray-300 text-sm hover:border-blue-500 hover:text-blue-400 transition cursor-default">HTML5</span>
+          <span
+            class="px-4 py-2 bg-gray-900 border border-gray-700 rounded-full text-gray-300 text-sm hover:border-blue-500 hover:text-blue-400 transition cursor-default">CSS3</span>
+          <span
+            class="px-4 py-2 bg-gray-900 border border-gray-700 rounded-full text-gray-300 text-sm hover:border-yellow-500 hover:text-yellow-400 transition cursor-default">JavaScript</span>
+          <span
+            class="px-4 py-2 bg-gray-900 border border-gray-700 rounded-full text-gray-300 text-sm hover:border-cyan-500 hover:text-cyan-400 transition cursor-default">Tailwind
+            CSS</span>
+          <span
+            class="px-4 py-2 bg-gray-900 border border-gray-700 rounded-full text-gray-300 text-sm hover:border-orange-500 hover:text-orange-400 transition cursor-default">Git</span>
+          <span
+            class="px-4 py-2 bg-gray-900 border border-gray-700 rounded-full text-gray-300 text-sm hover:border-purple-500 hover:text-purple-400 transition cursor-default">Responsive
+            Design</span>
+        </div>
+      </div>
+
+      <a href="assets/cv.pdf" download="Verel_CV.pdf"
+        class="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-full transition transform hover:-translate-y-1 shadow-lg hover:shadow-blue-500/50">
+        <span>Download CV</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+        </svg>
+      </a>
     </div>
   </section>
 
   <!-- PROJECTS -->
   <section id="projects" class="min-h-screen bg-gray-900 py-20">
     <div class="max-w-6xl mx-auto px-6">
-      <h3 class="text-3xl font-bold mb-10">Projects</h3>
+      <h3 class="text-3xl font-bold mb-10" data-aos="fade-down">Projects</h3>
 
-      <div class="grid md:grid-cols-3 gap-6">
-        <!-- Project Card -->
-        <div class="bg-gray-800 p-6 rounded-xl hover:scale-105 transition">
-          <h4 class="text-xl font-semibold mb-2">Project 1</h4>
-          <p class="text-gray-400 text-sm mb-4">
-            Simple landing page using HTML & Tailwind CSS.
-          </p>
-          <a href="#" class="text-blue-400 text-sm">View Project →</a>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Project Card 1 -->
+        <div class="group bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300"
+          data-aos="fade-up" data-aos-delay="100">
+          <div class="relative overflow-hidden">
+            <img src="assets/project_1_landing_1765950044134.png" alt="Project 1"
+              class="w-full h-56 object-cover transform group-hover:scale-110 transition duration-500">
+            <div
+              class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+              <a href="#"
+                class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full transform translate-y-4 group-hover:translate-y-0 transition duration-300">
+                View Project <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                  </path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex gap-2 mb-4">
+              <span class="text-xs font-semibold bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full">HTML</span>
+              <span class="text-xs font-semibold bg-purple-500/10 text-blue-400 px-3 py-1 rounded-full">Tailwind</span>
+            </div>
+            <h4 class="text-xl font-bold mb-2">Project 1</h4>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Simple landing page using HTML & Tailwind CSS. Clean layout and responsive design.
+            </p>
+          </div>
         </div>
 
-        <div class="bg-gray-800 p-6 rounded-xl hover:scale-105 transition">
-          <h4 class="text-xl font-semibold mb-2">Project 2</h4>
-          <p class="text-gray-400 text-sm mb-4">
-            Portfolio website single page.
-          </p>
-          <a href="#" class="text-blue-400 text-sm">View Project →</a>
+        <!-- Project Card 2 -->
+        <div class="group bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300"
+          data-aos="fade-up" data-aos-delay="300">
+          <div class="relative overflow-hidden">
+            <img src="assets/project_2_portfolio_1765950063763.png" alt="Project 2"
+              class="w-full h-56 object-cover transform group-hover:scale-110 transition duration-500">
+            <div
+              class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+              <a href="#"
+                class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full transform translate-y-4 group-hover:translate-y-0 transition duration-300">
+                View Project <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                  </path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex gap-2 mb-4">
+              <span
+                class="text-xs font-semibold bg-yellow-500/10 text-yellow-500 px-3 py-1 rounded-full">JavaScript</span>
+              <span class="text-xs font-semibold bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full">CSS</span>
+            </div>
+            <h4 class="text-xl font-bold mb-2">Project 2</h4>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Portfolio website single page with dark mode aesthetics and smooth animations.
+            </p>
+          </div>
         </div>
 
-        <div class="bg-gray-800 p-6 rounded-xl hover:scale-105 transition">
-          <h4 class="text-xl font-semibold mb-2">Project 3</h4>
-          <p class="text-gray-400 text-sm mb-4">
-            Simple JavaScript interactive app.
-          </p>
-          <a href="#" class="text-blue-400 text-sm">View Project →</a>
+        <!-- Project Card 3 -->
+        <div class="group bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300"
+          data-aos="fade-up" data-aos-delay="500">
+          <div class="relative overflow-hidden">
+            <img src="assets/project_3_app_1765950081436.png" alt="Project 3"
+              class="w-full h-56 object-cover transform group-hover:scale-110 transition duration-500">
+            <div
+              class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+              <a href="#"
+                class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full transform translate-y-4 group-hover:translate-y-0 transition duration-300">
+                View Project <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                  </path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex gap-2 mb-4">
+              <span class="text-xs font-semibold bg-green-500/10 text-green-400 px-3 py-1 rounded-full">Vue.js</span>
+              <span class="text-xs font-semibold bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full">API</span>
+            </div>
+            <h4 class="text-xl font-bold mb-2">Project 3</h4>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Interactive dashboard app with real-time data visualization and charts.
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="min-h-screen flex items-center bg-gray-800">
-    <div class="max-w-4xl mx-auto px-6 w-full">
-      <h3 class="text-3xl font-bold mb-6">Contact Me</h3>
+  <section id="contact" class="min-h-screen flex items-center bg-gray-800 py-20">
+    <div class="max-w-6xl mx-auto px-6 w-full" data-aos="zoom-in-up">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- Left Column: Info -->
+        <div>
+          <h3 class="text-4xl font-bold mb-4">Let's Work Together 🚀</h3>
+          <p class="text-gray-400 leading-relaxed mb-8">
+            Have a project in mind or just want to say hi? I'm always open to discussing new projects, creative ideas or
+            opportunities to be part of your visions.
+          </p>
+          <div class="space-y-4">
+            <div class="flex items-center gap-4 text-gray-300">
+              <div class="w-10 h-10 bg-blue-500/10 rounded-full flex items-center justify-center text-blue-400">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                  </path>
+                </svg>
+              </div>
+              <span>contact@verel.dev</span>
+            </div>
+            <div class="flex items-center gap-4 text-gray-300">
+              <div class="w-10 h-10 bg-blue-500/10 rounded-full flex items-center justify-center text-blue-400">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+              </div>
+              <span>Jakarta, Indonesia</span>
+            </div>
+          </div>
+        </div>
 
-      <form class="grid gap-4 max-w-xl">
-        <input type="text" placeholder="Your Name"
-               class="p-3 rounded bg-gray-700 text-white outline-none"/>
-        <input type="email" placeholder="Your Email"
-               class="p-3 rounded bg-gray-700 text-white outline-none"/>
-        <textarea rows="4" placeholder="Your Message"
-                  class="p-3 rounded bg-gray-700 text-white outline-none"></textarea>
-        <button
-          class="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded text-white">
-          Send Message
-        </button>
-      </form>
+        <!-- Right Column: Form -->
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST"
+          class="bg-gray-900 p-8 rounded-2xl border border-gray-700 shadow-xl">
+          <div class="grid gap-6">
+            <div>
+              <label class="block text-sm text-gray-400 mb-2">Your Name</label>
+              <input type="text" name="name" placeholder="John Doe" required
+                class="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition" />
+            </div>
+            <div>
+              <label class="block text-sm text-gray-400 mb-2">Your Email</label>
+              <input type="email" name="email" placeholder="john@example.com" required
+                class="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition" />
+            </div>
+            <div>
+              <label class="block text-sm text-gray-400 mb-2">Message</label>
+              <textarea name="message" rows="4" placeholder="Tell me about your project..." required
+                class="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition"></textarea>
+            </div>
+            <button type="submit"
+              class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition transform hover:scale-[1.02]">
+              Send Message 🚀
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   </section>
 
   <!-- JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="script.js"></script>
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 border-t border-gray-800 pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-12 mb-12">
+        <!-- Brand -->
+        <div>
+          <h4 class="text-2xl font-bold mb-4">Verel.dev</h4>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Building digital experiences with passion and clean code. Let's create something amazing together.
+          </p>
+        </div>
+
+        <!-- Links -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4 text-white">Quick Links</h4>
+          <ul class="space-y-2 text-gray-400 text-sm">
+            <li><a href="#home" class="hover:text-blue-400 transition">Home</a></li>
+            <li><a href="#about" class="hover:text-blue-400 transition">About</a></li>
+            <li><a href="#projects" class="hover:text-blue-400 transition">Projects</a></li>
+            <li><a href="#contact" class="hover:text-blue-400 transition">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Socials -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4 text-white">Connect</h4>
+          <div class="flex gap-4">
+            <a href="https://github.com/mhdverel" target="_blank"
+              class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-white hover:text-black transition">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                  clip-rule="evenodd" />
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/muhammad-verel" target="_blank"
+              class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-blue-600 hover:text-white transition">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd"
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                  clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
+        &copy; 2025 Verel. Built with passion & Tailwind CSS.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop"
+    class="fixed bottom-8 right-8 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition transform translate-y-20 opacity-0 z-50">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+    </svg>
+  </button>
 </body>
+
 </html>
